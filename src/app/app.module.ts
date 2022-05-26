@@ -11,11 +11,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PopupComponent } from './shared/popup/popup.component';
+import { UsersListComponent } from './users/users-list/users-list.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'survey', component: SurveyFormComponent },
-  { path: 'users', component: UsersComponent }
+  { path: 'users/create', component: UsersComponent },
+  { path: 'users', component: UsersListComponent }
 ]
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     SurveyFormComponent,
     UsersComponent,
     TitleComponent,
-    PopupComponent
+    PopupComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ const appRoutes: Routes = [
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [PopupComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

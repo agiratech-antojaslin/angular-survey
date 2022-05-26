@@ -9,12 +9,15 @@ import { SurveyService } from '../services/survey.service';
 })
 export class SurveyFormComponent implements OnInit {
 
+  userId: number = Math.floor(1000 + Math.random() * 9000);
   // surveyForm = this.formBuilder.group({
   //   question_1: false,
   //   question_2: false,
   //   question_3: false,
   //   question_4: false
   // });
+
+  createSurvey: boolean = false;
 
   constructor(private surveyService: SurveyService) { }
 
@@ -23,10 +26,10 @@ export class SurveyFormComponent implements OnInit {
 
   onSubmit(surveyForm: any) {
     if(surveyForm.status == 'INVALID') {
-
+      
     };
     const question_answers = surveyForm.value;
-    const user_id = Math.floor(1000 + Math.random() * 9000);
+    const user_id = this.userId;
     let completed_questions = 0;
     if(question_answers.question_1 != '') {
       completed_questions ++;
@@ -49,6 +52,7 @@ export class SurveyFormComponent implements OnInit {
     const survey_obj = new Survey(user_id, question_answers.question_1, question_answers.question_2, question_answers.question_3, question_answers.question_4, completed_percentage, is_completed);
     this.surveyService.createSurvey(survey_obj);
     surveyForm.reset();
+    this.createSurvey = true;
   }
 
 }

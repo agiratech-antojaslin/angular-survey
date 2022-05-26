@@ -1,7 +1,11 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-sm-12 text-center survey-title">
+    <div class="row survey-title">
+        <div class="col-sm-8 text-center">
             <h1>Start Survey!</h1>
+        </div>
+        <div class="col-sm-4">
+            <h5>User ID: <b>{{ userId }}</b></h5>
+            <a routerLink = "/" class="btn btn-light">Home</a>
         </div>
     </div>
 </div>
@@ -76,6 +80,7 @@
                     <button class="btn btn-theme" type="submit">Done</button>
                 </div>
             </form>
+            <div *ngIf="createSurvey" class="alert alert-success mt-3">Your answers were saved successfully!</div>
         </div>
     </div>
 </div>
