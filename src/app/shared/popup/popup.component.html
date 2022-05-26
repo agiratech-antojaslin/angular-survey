@@ -1,0 +1,18 @@
+<ng-template #popup let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Do you want to exit?</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <!-- <div class="modal-body">
+        <div class="todo_edit">
+            <div class="todo_edit--input">
+                <input *ngIf="editTodoItem != undefined" [(ngModel)] = "editTodoContent" type="text" class="form-control" #inputEditTodo >
+            </div>
+        </div>
+    </div> -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-save">Yes</button>
+    </div>
+</ng-template>

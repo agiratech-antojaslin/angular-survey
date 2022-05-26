@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Josefin+Slab:wght@100&family=Lobster&family=Play&family=Tapestry&display=swap');
+
+body {
+    font-family: 'Blaka', cursive;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Play', sans-serif;
+    font-family: 'Tapestry', cursive;
+}
+.btn-theme {
+    background-color: #bba0b9;
+    color: #fff;
+}
+.btn-theme:hover {
+    background-color: #b18eae;
+    color: #fff;
+}

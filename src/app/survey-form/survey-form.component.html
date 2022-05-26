@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 text-center survey-title">
+            <h1>Start Survey!</h1>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-12">
+            <form #surveyForm = "ngForm" (ngSubmit)="onSubmit(surveyForm)">
+                <ol>
+                    <li>
+                        During the last week, if any, has someone made fun of you, called you names, or insulted you?
+                        <div class="form-check">
+                            <input #question_1 = "ngModel" class="form-check-input" required type="radio" name="question_1" id="question_1_true" value="true" ngModel>
+                            <label class="form-check-label" for="question_1_true">
+                              Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input #question_1 = "ngModel" class="form-check-input" required type="radio" name="question_1" id="question_1_false" value="false" checked ngModel>
+                            <label class="form-check-label" for="question_1_false">
+                              No
+                            </label>
+                        </div>
+                        <!-- <div *ngIf="question_1.touched && question_1.invalid" class="alert alert-danger">Invalid</div> -->
+                    </li>
+                    <li>
+                        During last week, if any, has someone spread rumors about you?
+                        <div class="form-check">
+                            <input class="form-check-input" required type="radio" name="question_2" id="question_2_true" value="true" ngModel>
+                            <label class="form-check-label" for="question_2_true">
+                              Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" required type="radio" name="question_2" id="question_2_false" value="false" checked ngModel>
+                            <label class="form-check-label" for="question_2_false">
+                              No
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        During last week, if any, has someone pushed you, shoved you, tripped you, or spit on you?
+                        <div class="form-check">
+                            <input class="form-check-input" required type="radio" name="question_3" id="question_3_true" value="true" ngModel>
+                            <label class="form-check-label" for="question_3_true">
+                              Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" required type="radio" name="question_3" id="question_3_false" value="false" checked ngModel>
+                            <label class="form-check-label" for="question_3_false">
+                              No
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        During last week, if any, has someone threatened you with harm?
+                        <div class="form-check">
+                            <input class="form-check-input" required type="radio" name="question_4" id="question_4_true" value="true" ngModel>
+                            <label class="form-check-label" for="question_4_true">
+                              Yes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" required type="radio" name="question_4" id="question_4_false" value="false" checked ngModel>
+                            <label class="form-check-label" for="question_4_false">
+                              No
+                            </label>
+                        </div>
+                    </li>
+                </ol>
+                <div class="text-right">
+                    <button class="btn btn-theme" type="submit">Done</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
