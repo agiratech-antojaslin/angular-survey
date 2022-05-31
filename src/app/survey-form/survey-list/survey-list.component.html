@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="container bg-white box-content">
+        <div class="row box-content_inner">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h1>Survey List</h1>
+                    </div>
+                    <div class="col-sm-12">
+                        <a routerLink = "/" class="btn btn-light">Home</a>
+                    </div>
+                    <div class="col-sm-12">
+                        <table class="table table-striped mt-2">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">User ID</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor = "let survey of surveys;let i = index">
+                                    <th scope="row">{{ i+1 }}</th>
+                                    <td>{{ survey.user_id }}</td>
+                                    <td>{{ survey.percentage }}</td>
+                                    <td>
+                                        <a 
+                                        routerLink = "/survey/{{survey.user_id}}/edit"
+                                        class="btn btn-theme">Edit</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <img src="https://cdn.dribbble.com/users/472667/screenshots/4037893/ui-ux-design-banner.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</div>

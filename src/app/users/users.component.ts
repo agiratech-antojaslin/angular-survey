@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../modals/user.modal';
 import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +12,7 @@ export class UsersComponent implements OnInit {
   userId: number = Math.floor(1000 + Math.random() * 9000);
   userNameErr: boolean = false;
   userEmailErr: boolean = false;
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,7 @@ export class UsersComponent implements OnInit {
     if(form_data.userName != '' && form_data.userName != '') {
       const user_obj = new User(this.userId, form_data.userName, form_data.userEmail);
       this.userService.createUser(user_obj);
+      this.router.navigate(['/survey', user_obj.id]);
     }
     
   }

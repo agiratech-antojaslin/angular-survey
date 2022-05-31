@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row survey-title">
         <div class="col-sm-8 text-center">
             <h1>Create User</h1>
@@ -9,8 +9,8 @@
             <a routerLink = "/" class="btn btn-light">Home</a>
         </div>
     </div>
-</div>
-<div class="container my-5">
+</div> -->
+<!-- <div class="container my-5">
     <div class="row">
         <div class="col-sm-3"></div>
         <div class="col-sm-6">
@@ -31,5 +31,41 @@
             </form>
         </div>
         <div class="col-sm-3"></div>
+    </div>
+</div> -->
+<div class="container-fluid">
+    <div class="container bg-white box-content">
+        <div class="row box-content_inner">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1>Create User</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 px-5">
+                        <form #userForm = "ngForm" (ngSubmit)="onSubmit(userForm)">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Name</label>
+                                <input #userName = "ngModel" required type="text" class="form-control" id="nameInput" name="userName" placeholder="John Doe" ngModel>
+                                <div *ngIf = "userName.touched && userName.invalid || userNameErr" class="alert alert-danger mt-2">User name is invalid.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Email</label>
+                                <input #userEmail = "ngModel" required type="email" class="form-control" id="emailInput" name="userEmail" placeholder="name@example.com" ngModel>
+                                <div *ngIf = "userEmail.touched && userEmail.invalid || userEmailErr" class="alert alert-danger mt-2">User email is invalid.</div>
+                            </div>
+                            <div class="text-right">
+                                <button class="btn btn-theme" type="submit">Done</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-6">
+                <img src="https://www.arena-multimedia.com/uploads/sub_course_images/ui_ux_design.png" class="img-fluid" alt="">
+            </div>
+        </div>
     </div>
 </div>
