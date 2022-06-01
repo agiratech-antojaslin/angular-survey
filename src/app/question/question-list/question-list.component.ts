@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import swal from 'sweetalert2'; 
+import { Question } from 'src/app/modals/question.modal';
 
 @Component({
   selector: 'app-question-list',
@@ -8,12 +9,11 @@ import swal from 'sweetalert2';
   styleUrls: ['./question-list.component.css']
 })
 export class QuestionListComponent implements OnInit {
-
-  questions = this.questionService.getQuestion();
-
+  questions!: Array<Question>; 
   constructor(private questionService: QuestionService) { }
 
   ngOnInit(): void {
+    this.questions = this.questionService.getQuestion();
   }
 
   onDelete(questionId: string) {

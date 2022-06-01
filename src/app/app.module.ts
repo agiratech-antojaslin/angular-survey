@@ -22,6 +22,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { ThankPageComponent } from './thank-page/thank-page.component';
 import { QuestionService } from './services/question.service';
 import { QuestionListComponent } from './question/question-list/question-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,14 @@ import { QuestionListComponent } from './question/question-list/question-list.co
     QuestionAddComponent,
     AdminDashboardComponent,
     ThankPageComponent,
-    QuestionListComponent
+    QuestionListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [PopupComponent, AuthGuard, AuthService, CanDeactivateGuard],
   bootstrap: [AppComponent]
