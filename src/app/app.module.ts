@@ -16,6 +16,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthGuard } from './auth-guard.service';
 import { AuthService } from './auth.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
+import { QuestionComponent } from './question/question.component';
+import { QuestionAddComponent } from './question/question-add/question-add.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { ThankPageComponent } from './thank-page/thank-page.component';
+import { QuestionService } from './services/question.service';
+import { QuestionListComponent } from './question/question-list/question-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +33,12 @@ import { CanDeactivateGuard } from './can-deactivate-guard.service';
     PopupComponent,
     UsersListComponent,
     SurveyListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    QuestionComponent,
+    QuestionAddComponent,
+    AdminDashboardComponent,
+    ThankPageComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,

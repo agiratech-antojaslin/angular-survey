@@ -6,6 +6,7 @@ import swal from 'sweetalert2';
 import { NgbRefDirective } from '@ng-bootstrap/ng-bootstrap/accordion/accordion';
 import { CanComponentDeactivate, CanDeactivateGuard } from '../can-deactivate-guard.service';
 import { Observable } from 'rxjs';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-survey-form',
@@ -17,6 +18,7 @@ export class SurveyFormComponent implements OnInit, CanComponentDeactivate {
   userId!: number;
   answersSubmitted = false;
   formTitle!: string;
+  questions = this.questionService.getQuestion();
   // surveyForm = this.formBuilder.group({
   //   question_1: false,
   //   question_2: false,
@@ -26,16 +28,16 @@ export class SurveyFormComponent implements OnInit, CanComponentDeactivate {
 
   createSurvey: boolean = false;
 
-  constructor(private surveyService: SurveyService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private surveyService: SurveyService, private activatedRoute: ActivatedRoute, private router: Router, private questionService: QuestionService) { }
 
   ngOnInit(): void {
     //this.activatedRoute.params.subscribe( params => this.userId = params['id']);
-    console.log(this.activatedRoute.snapshot.url[2].path);
-    if(this.activatedRoute.snapshot.url[2].path != undefined) {
-      this.formTitle = "Edit Survey";
-    } else {
+    // console.log(this.activatedRoute.snapshot.url[2].path);
+    // if(this.activatedRoute.snapshot.url[2].path != undefined) {
+    //   this.formTitle = "Edit Survey";
+    // } else {
       this.formTitle = "Start Survey";
-    }
+    //}
     this.userId = this.activatedRoute.snapshot.params['id'];
   }
 
@@ -75,7 +77,7 @@ export class SurveyFormComponent implements OnInit, CanComponentDeactivate {
         'OK',
       }).then(() => {
         this.answersSubmitted = true;
-        this.router.navigate(["/"]);
+        this.router.navigate(["thank-you"]);
       })
     }
   }

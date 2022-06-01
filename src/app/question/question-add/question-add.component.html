@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="container bg-white box-content">
+        <div class="row box-content_inner">
+            <div class="col-sm-12 d-flex flex-column justify-content-between">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h1>Add New Question</h1>
+                    </div>
+                </div>
+                <div class="row mt-5 px-5">
+                    <div class="col-sm-12">
+                        <form #questionForm = "ngForm" (ngSubmit) = "onSubmit(questionForm)">
+                            <div class="form-group">
+                                <label for="question">Enter a question</label>
+                                <textarea #questionRef = "ngModel" 
+                                          required 
+                                          class="form-control" 
+                                          id="question" 
+                                          name="question"
+                                          rows="3"
+                                          ngModel></textarea>
+                                <div *ngIf = "questionRef.touched && questionRef.invalid" class="alert alert-danger mt-2">This field is required!</div>
+                            </div>
+                            <button class="btn btn-theme" [disabled] = "!questionForm.valid" type="submit">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

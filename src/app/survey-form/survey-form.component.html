@@ -100,7 +100,22 @@
                     <div class="col-sm-12">
                         <form #surveyForm = "ngForm" (ngSubmit)="onSubmit(surveyForm)">
                             <ol>
-                                <li>
+                                <li *ngFor = "let question of questions; let i = index">
+                                    {{ question.question }}
+                                    <div class="form-check">
+                                        <input #question_1 = "ngModel" class="form-check-input" required type="radio" name="question_{{i+1}}" id="question_{{i+1}}_true" value="true" ngModel>
+                                        <label class="form-check-label" for="question_{{i+1}}_true">
+                                          Yes
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input #question_1 = "ngModel" class="form-check-input" required type="radio" name="question_{{i+1}}" id="question_{{i+1}}_false" value="false" checked ngModel>
+                                        <label class="form-check-label" for="question_{{i+1}}_false">
+                                          No
+                                        </label>
+                                    </div>
+                                </li>
+                                <!-- <li>
                                     During the last week, if any, has someone made fun of you, called you names, or insulted you?
                                     <div class="form-check">
                                         <input #question_1 = "ngModel" class="form-check-input" required type="radio" name="question_1" id="question_1_true" value="true" ngModel>
@@ -114,7 +129,6 @@
                                           No
                                         </label>
                                     </div>
-                                    <!-- <div *ngIf="question_1.touched && question_1.invalid" class="alert alert-danger">Invalid</div> -->
                                 </li>
                                 <li>
                                     During last week, if any, has someone spread rumors about you?
@@ -160,7 +174,7 @@
                                           No
                                         </label>
                                     </div>
-                                </li>
+                                </li> -->
                             </ol>
                             <div class="text-right">
                                 <button class="btn btn-theme" type="submit">Done</button>

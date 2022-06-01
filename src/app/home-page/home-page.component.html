@@ -2,13 +2,24 @@
     <div class="container bg-white box-content">
         <div class="row box-content_inner">
             
-            <div class="col-sm-6">
+            <div class="col-sm-6 d-flex flex-column justify-content-between">
                 <div class="row">
                     <div class="col-sm-12">
                         <h1>Survey Analytix</h1>
                     </div>
                 </div>
-                <div class="box-content_inner--items">
+                <div class="row">
+                  <div class="col-sm-12">
+                    We're conducting research on the different question types SurveyMonkey has to offer. We'd love to hear from you about what question types you use the most and what question types you want to see built. This will help us make improvements to the existing tool and prioritize new features. The survey should only take 5 minutes, and your responses are completely anonymous.
+
+                    You can only take the survey once, but you can edit your responses until the survey is closed on May 28, 2014. Questions marked with an asterisk (*) are required.
+
+                    If you have any questions about the survey, please email us: youremail@email.com
+
+                    We really appreciate your input!
+                  </div>
+                </div>
+                <!-- <div class="box-content_inner--items">
                   <div class="animated-arrow--wrapper">
                       <a class='animated-arrow' routerLink = "/users/create">
                           <span class='the-arrow -left'>
@@ -54,7 +65,7 @@
                           </span>
                       </a>
                   </div>
-                </div>
+                </div> -->
                 
                 
                 <!-- <div class="card mx-auto card-survey" style="width: 18rem;">
@@ -73,7 +84,9 @@
                     </div>
                 </div> -->
                 <div class="row justify-content-center">
+                  <!-- <a class="btn btn-theme mr-1" >Get Started</a> -->
                   <button class="btn btn-theme mr-1" (click) = "userLogin()">Login</button>
+                  <button class="btn btn-theme mr-1" (click) = "userLoginAdmin()">Login as admin</button>
                   <button class="btn btn-theme ml-1" (click) = "userLogout()">Logout</button>
                 </div>
             </div>

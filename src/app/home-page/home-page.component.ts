@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import swal from 'sweetalert2'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -9,7 +10,7 @@ import swal from 'sweetalert2';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -19,6 +20,19 @@ export class HomePageComponent implements OnInit {
     swal.fire({
       text: 'You have successfully logged in!', icon: 'success', confirmButtonText:
       'OK',
+    }).then(() => {
+      this.router.navigate(["users/create"]);
+    });
+    
+  }
+
+  userLoginAdmin() {
+    this.authService.loginAdmin();
+    swal.fire({
+      text: 'You have successfully logged in!', icon: 'success', confirmButtonText:
+      'OK',
+    }).then(() => {
+      this.router.navigate(["admin/dashboard"]);
     });
   }
 
